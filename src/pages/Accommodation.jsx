@@ -1,12 +1,13 @@
-import { Navigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import Collapse from '../components/Collapse';
 import accommodations from '../data/logements.json';
+import ErrorPage from './ErrorPage';
 
 function Accommodation() {
   const { id } = useParams();
   const accommodation = accommodations.find((item) => item.id === id);
 
-  if (!accommodation) return <Navigate to="/404" replace />;
+  if (!accommodation) return <ErrorPage />;
 
   return (
     <article className="accommodation">

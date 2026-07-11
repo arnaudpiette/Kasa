@@ -13,6 +13,7 @@ function AppRouter() {
           <Route path="/" element={<Home />} />
           <Route path="/a-propos" element={<About />} />
           <Route path="/logement/:id" element={<Accommodation />} />
+          <Route path="/404" element={<ErrorPage />} />
           <Route path="*" element={<ErrorPage />} />
         </Route>
       </Routes>

@@ -71,27 +71,30 @@
 }
 
 .error-page {
-    min-height: 500px;
+    min-height: 680px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 100px;
     color: $primary;
     text-align: center;
 }
 
 .error-page h1 {
     margin: 0;
-    font-size: clamp(96px, 20vw, 288px);
+    font-size: 288px;
     line-height: 1;
 }
 
 .error-page p {
-    font-size: clamp(18px, 3vw, 36px);
+    margin: 0;
+    font-size: 36px;
 }
 
 .error-page a {
     color: $text;
+    font-size: 18px;
 }
 
 @media (max-width: $mobile) {
@@ -116,7 +119,11 @@
         grid-template-columns: 1fr;
         gap: 20px;
     }
-        .error-page {
-            min-height: 420px;
-        }
+    .error-page {
+        min-height: 500px;
+        gap: 110px;
+    }
+    .error-page h1 { font-size: 96px; }
+    .error-page p { max-width: 280px; font-size: 18px; }
+    .error-page a { font-size: 14px; }
 }
