@@ -1,8 +1,7 @@
 import Banner from '../components/Banner';
 import Card from '../components/Card';
+import homeBanner from '../assets/Images/Image-Header.png';
 import accommodations from '../data/logements.json';
-
-const homeBanner = 'https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/kasa-banner.jpg';
 
 function Home() {
   return (

@@ -1,7 +1,6 @@
 import Banner from '../components/Banner';
 import Collapse from '../components/Collapse';
-
-const aboutBanner = 'https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/kasa-about.jpg';
+import aboutBanner from '../assets/Images/Image-a_propos.png';
 
 const values = [
   ['Fiabilité', 'Les annonces postées sur Kasa garantissent une fiabilité totale.'],

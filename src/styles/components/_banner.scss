@@ -8,20 +8,24 @@
   border-radius: 25px;
   color: white;
   background:
-    linear-gradient(#0008, #0008),
+    linear-gradient(rgba(0, 0, 0, 0.684), #0008),
     var(--banner-image) center / cover;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 
   h1 {
     margin: 0;
     font-size: clamp(28px, 4vw, 48px);
-    text-shadow: 0 2px 4px #000;
+    font-weight: 500;
+    -webkit-text-stroke: 1px #000;
+    paint-order: stroke fill;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
   }
 
- &--about {
-  background:
-    linear-gradient(#0006, #0006),
-    var(--banner-image) center / cover;
-}
+  &--about {
+    background:
+      linear-gradient(#0006, #0006),
+      var(--banner-image) center / cover;
+  }
 }
 
 @media (max-width: $mobile) {
