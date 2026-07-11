@@ -1,5 +1,7 @@
 import { useParams } from 'react-router-dom';
 import Collapse from '../components/Collapse';
+import Rating from '../components/Rating';
+import Slideshow from '../components/Slideshow';
 import accommodations from '../data/logements.json';
 import ErrorPage from './ErrorPage';
 
@@ -11,18 +13,25 @@ function Accommodation() {
 
   return (
     <article className="accommodation">
-      <img className="accommodation__cover" src={accommodation.cover} alt={accommodation.title} />
+      <Slideshow
+        key={accommodation.id}
+        pictures={accommodation.pictures}
+        title={accommodation.title}
+      />
       <div className="accommodation__heading">
-        <div>
+        <div className="accommodation__summary">
           <h1>{accommodation.title}</h1>
           <p>{accommodation.location}</p>
           <ul className="tags">
             {accommodation.tags.map((tag) => <li key={tag}>{tag}</li>)}
           </ul>
         </div>
-        <div className="host">
-          <span>{accommodation.host.name}</span>
-          <img src={accommodation.host.picture} alt={accommodation.host.name} />
+        <div className="accommodation__host-info">
+          <div className="host">
+            <span>{accommodation.host.name}</span>
+            <img src={accommodation.host.picture} alt={accommodation.host.name} />
+          </div>
+          <Rating value={accommodation.rating} />
         </div>
       </div>
       <div className="accommodation__details">

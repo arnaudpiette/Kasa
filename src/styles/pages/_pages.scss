@@ -6,13 +6,6 @@
     gap: 28px;
 }
 
-.accommodation__cover {
-    width: 100%;
-    height: 415px;
-    object-fit: cover;
-    border-radius: 25px;
-}
-
 .accommodation__heading {
     margin-top: 25px;
     display: flex;
@@ -25,6 +18,11 @@
     color: $primary;
     font-size: 36px;
     font-weight: 500;
+}
+
+.accommodation__summary > p {
+    margin: 8px 0 20px;
+    font-size: 18px;
 }
 
 .tags {
@@ -46,11 +44,18 @@
 }
 
 .host {
-    display:
-    flex; align-items: center;
+    display: flex;
+    align-items: center;
     gap: 10px;
     color: $primary;
     text-align: right;
+}
+
+.accommodation__host-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
 }
 
 .host span {
@@ -67,6 +72,7 @@
     margin-top: 24px;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    align-items: start;
     gap: 75px;
 }
 
@@ -102,18 +108,36 @@
         gap: 20px;
         margin-top: 20px;
     }
-    .accommodation__cover {
-        height: 255px;
-        border-radius: 10px;
-    }
     .accommodation__heading {
         flex-direction: column;
     }
     .accommodation h1 {
         font-size: 18px;
     }
-    .host {
-        align-self: flex-end;
+    .accommodation__summary > p {
+        margin: 5px 0 12px;
+        font-size: 14px;
+    }
+    .tags {
+        margin: 0;
+    }
+    .tags li {
+        min-width: 84px;
+        padding: 3px 10px;
+        border-radius: 5px;
+        font-size: 10px;
+    }
+    .accommodation__host-info {
+        width: 100%;
+        flex-direction: row-reverse;
+        align-items: center;
+    }
+    .host img {
+        width: 48px;
+        height: 48px;
+    }
+    .host span {
+        font-size: 12px;
     }
     .accommodation__details {
         grid-template-columns: 1fr;

@@ -1,0 +1,22 @@
+@use '../abstracts/variables' as *;
+
+.rating {
+  display: flex;
+  gap: 8px;
+
+  &__star {
+    color: #e3e3e3;
+    font-size: 26px;
+    line-height: 1;
+  }
+
+  &__star--active { color: $primary; }
+}
+
+@media (max-width: $mobile) {
+  .rating {
+    gap: 4px;
+
+    &__star { font-size: 18px; }
+  }
+}
