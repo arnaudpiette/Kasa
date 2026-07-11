@@ -1,0 +1,36 @@
+@use '../abstracts/variables' as *;
+
+.banner {
+  min-height: 223px;
+  padding: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 25px;
+  color: white;
+  background:
+    linear-gradient(#0008, #0008),
+    var(--banner-image) center / cover;
+
+  h1 {
+    margin: 0;
+    font-size: clamp(28px, 4vw, 48px);
+    text-shadow: 0 2px 4px #000;
+  }
+
+ &--about {
+  background:
+    linear-gradient(#0006, #0006),
+    var(--banner-image) center / cover;
+}
+}
+
+@media (max-width: $mobile) {
+  .banner {
+    min-height: 111px;
+    padding: 16px;
+    place-items: center start;
+    border-radius: 10px;
+
+    h1 { max-width: 230px; font-size: 24px; }
+  }
+}

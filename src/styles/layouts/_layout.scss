@@ -1,11 +1,82 @@
 @use '../abstracts/variables' as *;
-.site-layout { min-height: 100vh; display: flex; flex-direction: column; }
-.site-main { width: min(calc(100% - 40px), $content-width); margin: 0 auto 50px; flex: 1; }
-.header { width: min(calc(100% - 40px), $content-width); margin: 36px auto 45px; display: flex; align-items: center; justify-content: space-between; }
-.header__logo, .footer__logo { color: $primary; font-size: 48px; font-weight: 700; letter-spacing: -4px; text-decoration: none; }
-.header__nav { display: flex; gap: 55px; font-size: 18px; }
-.header__nav a { text-decoration: none; }
-.header__nav a.active { text-decoration: underline; text-underline-offset: 3px; }
-.footer { min-height: 210px; padding: 48px 20px 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; background: #000; text-align: center; }
-.footer__logo { color: white; font-size: 36px; }
-@media (max-width: $mobile) { .header { margin: 20px auto 27px; } .header__logo { font-size: 36px; } .header__nav { gap: 26px; font-size: 12px; text-transform: uppercase; } .site-main { margin-bottom: 27px; } }
+
+.site-layout {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.site-main {
+    width: min(calc(100% - 40px), $content-width);
+    margin: 0 auto 50px;
+    flex: 1;
+}
+
+.header {
+    width: min(calc(100% - 40px), $content-width);
+    margin: 36px auto 45px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__logo,
+.footer__logo {
+    color: $primary;
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: -4px;
+    text-decoration: none;
+}
+
+.header__nav {
+    display: flex;
+    gap: 55px;
+    font-size: 18px;
+}
+
+.header__nav a {
+    text-decoration: none;
+}
+
+.header__nav a.active {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.footer {
+    min-height: 210px;
+    padding: 48px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: #000;
+    text-align: center;
+}
+
+.footer__logo {
+    color: white;
+    font-size: 36px;
+}
+
+@media (max-width: $mobile) {
+    .header {
+        margin: 20px auto 27px;
+    }
+
+    .header__logo {
+        font-size: 36px;
+    }
+
+    .header__nav {
+        gap: 26px;
+        font-size: 12px;
+        text-transform: uppercase;
+    }
+
+    .site-main {
+        margin-bottom: 27px;
+    }
+}
