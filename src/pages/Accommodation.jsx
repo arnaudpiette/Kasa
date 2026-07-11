@@ -1,4 +1,5 @@
 import { Navigate, useParams } from 'react-router-dom';
+import Collapse from '../components/Collapse';
 import accommodations from '../data/logements.json';
 
 function Accommodation() {
@@ -24,14 +25,12 @@ function Accommodation() {
         </div>
       </div>
       <div className="accommodation__details">
-        <details className="collapse" open>
-          <summary>Description</summary>
+        <Collapse title="Description" modifier="accommodation">
           <p>{accommodation.description}</p>
-        </details>
-        <details className="collapse" open>
-          <summary>Équipements</summary>
+        </Collapse>
+        <Collapse title="Équipements" modifier="accommodation">
           <ul>{accommodation.equipments.map((item) => <li key={item}>{item}</li>)}</ul>
-        </details>
+        </Collapse>
       </div>
     </article>
   );

@@ -1,4 +1,5 @@
 import Banner from '../components/Banner';
+import Collapse from '../components/Collapse';
 
 const aboutBanner = 'https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/kasa-about.jpg';
 
@@ -16,10 +17,9 @@ function About() {
       <section className="about">
         <h1 className="visually-hidden">À propos</h1>
         {values.map(([title, text]) => (
-          <details key={title} className="collapse">
-            <summary>{title}</summary>
+          <Collapse key={title} title={title} modifier="about">
             <p>{text}</p>
-          </details>
+          </Collapse>
         ))}
       </section>
     </>
