@@ -1,6 +1,12 @@
 import { useId, useState } from 'react';
 
-function Collapse({ title, children, defaultOpen = false, modifier = '' }) {
+function Collapse({
+  title,
+  children,
+  defaultOpen = false,
+  modifier = '',
+  contentMinHeight,
+}) {
   const [isOpen, setIsOpen] = useState(defaultOpen);
   const contentId = useId();
   const className = [
@@ -22,7 +28,12 @@ function Collapse({ title, children, defaultOpen = false, modifier = '' }) {
         <span className="collapse__arrow" aria-hidden="true" />
       </button>
       <div className="collapse__animation">
-        <div className="collapse__content" id={contentId} aria-hidden={!isOpen}>
+        <div
+          className="collapse__content"
+          id={contentId}
+          aria-hidden={!isOpen}
+          style={isOpen && contentMinHeight ? { minHeight: contentMinHeight } : undefined}
+        >
           {children}
         </div>
       </div>

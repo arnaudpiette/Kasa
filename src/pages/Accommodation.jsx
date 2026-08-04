@@ -1,3 +1,4 @@
+import { useLayoutEffect, useRef, useState } from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 import Collapse from '../components/Collapse';
 import Rating from '../components/Rating';
@@ -7,6 +8,30 @@ import accommodations from '../data/logements.json';
 function Accommodation() {
   const { id } = useParams();
   const accommodation = accommodations.find((item) => item.id === id);
+  const detailsRef = useRef(null);
+  const [detailsContentHeight, setDetailsContentHeight] = useState();
+
+  useLayoutEffect(() => {
+    const details = detailsRef.current;
+    if (!details) return undefined;
+
+    const contents = [...details.querySelectorAll('.collapse__content')];
+    const measure = () => {
+      const tallestContent = Math.max(
+        ...contents.map((content) => content.firstElementChild?.scrollHeight ?? 0),
+      );
+      setDetailsContentHeight(tallestContent || undefined);
+    };
+
+    measure();
+
+    const resizeObserver = new ResizeObserver(measure);
+    contents.forEach((content) => {
+      if (content.firstElementChild) resizeObserver.observe(content.firstElementChild);
+    });
+
+    return () => resizeObserver.disconnect();
+  }, [id]);
 
   if (!accommodation) return <Navigate to="/404" replace />;
 
@@ -33,11 +58,19 @@ function Accommodation() {
           <Rating value={accommodation.rating} />
         </div>
       </div>
-      <div className="accommodation__details">
-        <Collapse title="Description" modifier="accommodation">
+      <div className="accommodation__details" ref={detailsRef}>
+        <Collapse
+          title="Description"
+          modifier="accommodation"
+          contentMinHeight={detailsContentHeight}
+        >
           <p>{accommodation.description}</p>
         </Collapse>
-        <Collapse title="Équipements" modifier="accommodation">
+        <Collapse
+          title="Équipements"
+          modifier="accommodation"
+          contentMinHeight={detailsContentHeight}
+        >
           <ul>{accommodation.equipments.map((item) => <li key={item}>{item}</li>)}</ul>
         </Collapse>
       </div>
