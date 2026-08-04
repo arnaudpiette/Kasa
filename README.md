@@ -175,29 +175,50 @@ Kasa/
 │   │   ├── Icons/
 │   │   └── Images/
 │   ├── components/
-│   │   ├── Banner.jsx
-│   │   ├── Card.jsx
-│   │   ├── Collapse.jsx
-│   │   ├── Footer.jsx
-│   │   ├── Header.jsx
-│   │   ├── Layout.jsx
-│   │   ├── Rating.jsx
-│   │   └── Slideshow.jsx
+│   │   ├── Banner/
+│   │   │   ├── Banner.jsx
+│   │   │   └── Banner.scss
+│   │   ├── Card/
+│   │   │   ├── Card.jsx
+│   │   │   └── Card.scss
+│   │   ├── Collapse/
+│   │   │   ├── Collapse.jsx
+│   │   │   └── Collapse.scss
+│   │   ├── Footer/
+│   │   │   ├── Footer.jsx
+│   │   │   └── Footer.scss
+│   │   ├── Header/
+│   │   │   ├── Header.jsx
+│   │   │   └── Header.scss
+│   │   ├── Layout/
+│   │   │   ├── Layout.jsx
+│   │   │   └── Layout.scss
+│   │   ├── Rating/
+│   │   │   ├── Rating.jsx
+│   │   │   └── Rating.scss
+│   │   └── Slideshow/
+│   │       ├── Slideshow.jsx
+│   │       └── Slideshow.scss
 │   ├── data/
 │   │   └── logements.json
 │   ├── pages/
-│   │   ├── About.jsx
-│   │   ├── Accommodation.jsx
-│   │   ├── ErrorPage.jsx
-│   │   └── Home.jsx
+│   │   ├── About/
+│   │   │   ├── About.jsx
+│   │   │   └── About.scss
+│   │   ├── Accommodation/
+│   │   │   ├── Accommodation.jsx
+│   │   │   └── Accommodation.scss
+│   │   ├── ErrorPage/
+│   │   │   ├── ErrorPage.jsx
+│   │   │   └── ErrorPage.scss
+│   │   └── Home/
+│   │       ├── Home.jsx
+│   │       └── Home.scss
 │   ├── router/
 │   │   └── AppRouter.jsx
 │   ├── styles/
 │   │   ├── abstracts/
 │   │   ├── base/
-│   │   ├── components/
-│   │   ├── layouts/
-│   │   ├── pages/
 │   │   └── main.scss
 │   ├── App.jsx
 │   └── main.jsx
@@ -237,15 +258,23 @@ Kasa/
 
 ## Organisation des styles
 
-Les styles sont écrits en SCSS et chargés depuis `src/styles/main.scss`.
+Les styles sont écrits en SCSS et colocalisés avec les éléments auxquels ils
+s’appliquent. Chaque composant et chaque page possède son propre dossier avec
+son fichier JSX et son fichier SCSS. Par exemple :
 
-Ils sont répartis en plusieurs catégories :
+```text
+src/components/Banner/Banner.jsx
+src/components/Banner/Banner.scss
+src/pages/Home/Home.jsx
+src/pages/Home/Home.scss
+```
 
-- `abstracts` : variables Sass ;
-- `base` : règles générales et reset ;
-- `components` : styles propres aux composants ;
-- `layouts` : structure générale, Header et Footer ;
-- `pages` : styles spécifiques aux pages.
+Chaque fichier JSX importe directement son fichier SCSS associé. Le dossier
+`src/styles` contient uniquement les styles partagés par toute l’application :
+
+- `abstracts/_variables.scss` : variables Sass communes ;
+- `base/_reset.scss` : règles générales et reset ;
+- `main.scss` : point d’entrée des styles globaux.
 
 Le projet utilise une convention de nommage inspirée de BEM :
 
