@@ -1,4 +1,5 @@
 import { useId, useState } from 'react';
+import './Collapse.scss';
 
 function Collapse({
   title,

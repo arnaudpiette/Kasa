@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import './Slideshow.scss';
 
 function Slideshow({ pictures, title }) {
   const [currentIndex, setCurrentIndex] = useState(0);

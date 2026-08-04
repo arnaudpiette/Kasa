@@ -1,6 +1,7 @@
-import Banner from '../components/Banner';
-import Collapse from '../components/Collapse';
-import aboutBanner from '../assets/Images/Image-a_propos.png';
+import Banner from '../../components/Banner/Banner';
+import Collapse from '../../components/Collapse/Collapse';
+import aboutBanner from '../../assets/Images/Image-a_propos.jpg';
+import './About.scss';
 
 const values = [
   ['Fiabilité', 'Les annonces postées sur Kasa garantissent une fiabilité totale.'],

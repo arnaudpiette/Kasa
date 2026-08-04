@@ -1,18 +1,30 @@
-@use '../abstracts/variables' as *;
+@use '../../styles/abstracts/variables' as *;
 
 .banner {
+  position: relative;
   min-height: 223px;
   padding: 30px;
   display: grid;
   place-items: center;
+  overflow: hidden;
   border-radius: 25px;
   color: white;
-  background:
-    linear-gradient(rgba(0, 0, 0, 0.684), #0008),
-    var(--banner-image) center / cover;
+  background: var(--banner-image) center / cover;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: #000;
+    opacity: 0.6;
+    mix-blend-mode: darken;
+    pointer-events: none;
+  }
+
   h1 {
+    position: relative;
+    z-index: 1;
     margin: 0;
     font-size: clamp(28px, 4vw, 48px);
     font-weight: 500;
@@ -21,11 +33,7 @@
     text-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
   }
 
-  &--about {
-    background:
-      linear-gradient(#0006, #0006),
-      var(--banner-image) center / cover;
-  }
+  &--about::before { opacity: 0.3; }
 }
 
 @media (max-width: $mobile) {

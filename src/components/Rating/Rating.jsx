@@ -1,3 +1,5 @@
+import './Rating.scss';
+
 const maximumRating = 5;
 
 function Rating({ value }) {

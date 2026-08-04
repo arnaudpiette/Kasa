@@ -1,0 +1,19 @@
+@use '../../styles/abstracts/variables' as *;
+
+.site-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-main {
+  width: min(calc(100% - 40px), $content-width);
+  margin: 0 auto 50px;
+  flex: 1;
+}
+
+@media (max-width: $mobile) {
+  .site-main {
+    margin-bottom: 27px;
+  }
+}

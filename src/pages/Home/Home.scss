@@ -1,4 +1,4 @@
-@use '../abstracts/variables' as *;
+@use '../../styles/abstracts/variables' as *;
 
 .gallery {
   margin-top: 43px;
@@ -11,9 +11,7 @@
 }
 
 @media (max-width: 900px) {
-  .gallery {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  .gallery { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: $mobile) {

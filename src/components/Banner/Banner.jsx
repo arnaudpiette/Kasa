@@ -1,3 +1,5 @@
+import './Banner.scss';
+
 function Banner({ image, title, modifier = '' }) {
   const className = `banner${modifier ? ` banner--${modifier}` : ''}`;
 

@@ -1,7 +1,8 @@
-import Banner from '../components/Banner';
-import Card from '../components/Card';
-import homeBanner from '../assets/Images/Image-Header.png';
-import accommodations from '../data/logements.json';
+import Banner from '../../components/Banner/Banner';
+import Card from '../../components/Card/Card';
+import homeBanner from '../../assets/Images/Image-Header.jpg';
+import accommodations from '../../data/logements.json';
+import './Home.scss';
 
 function Home() {
   return (

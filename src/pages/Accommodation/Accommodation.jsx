@@ -1,9 +1,10 @@
 import { useLayoutEffect, useRef, useState } from 'react';
 import { Navigate, useParams } from 'react-router-dom';
-import Collapse from '../components/Collapse';
-import Rating from '../components/Rating';
-import Slideshow from '../components/Slideshow';
-import accommodations from '../data/logements.json';
+import Collapse from '../../components/Collapse/Collapse';
+import Rating from '../../components/Rating/Rating';
+import Slideshow from '../../components/Slideshow/Slideshow';
+import accommodations from '../../data/logements.json';
+import './Accommodation.scss';
 
 function Accommodation() {
   const { id } = useParams();

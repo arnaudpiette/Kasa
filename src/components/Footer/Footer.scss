@@ -1,0 +1,21 @@
+@use '../../styles/abstracts/variables' as *;
+
+.footer {
+  min-height: 210px;
+  padding: 65px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background: #000;
+  text-align: center;
+
+  &__logo { width: 122px; }
+
+  p { margin: 50px 0 0; }
+}
+
+@media (max-width: $mobile) {
+  .footer__copyright-line { display: block; }
+}
